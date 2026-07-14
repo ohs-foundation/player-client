@@ -1,0 +1,55 @@
+*.iml
+.kotlin
+.gradle
+.vscode
+.antigravity
+**/build/
+xcuserdata
+!src/**/build/
+local.properties
+keystore.properties
+*.jks
+.idea
+.DS_Store
+captures
+kotlin-js-store
+.externalNativeBuild
+.cxx
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+node_modules/
+# --- AI-Native IDEs & Agents ---
+
+# Cursor
+.cursor/
+.cursorignore
+.cursorindexingignore
+.cursorrules
+
+# Windsurf / Codeium
+.windsurf/
+.codeium/
+.codeiumignore
+.windsurfignore
+
+# Aider
+.aider*
+.aider.chat.history.md
+.aider.conf.yml
+
+# JetBrains AI Assistant
+.aiignore
+.aiexclude
+
+# General / Emerging Standards
+.noai
+.aiexclude
+.claude
+AGENT.MD
+CLAUDE.MD
+.skills
+
