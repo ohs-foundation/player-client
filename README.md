@@ -5,18 +5,32 @@ hand-written mapping code. FHIR resources are projected into typed view-state by
 [SQL-on-FHIR ViewDefinitions](https://sql-on-fhir.org/), and that state is rendered by Compose
 Multiplatform renderers resolved through a registry.
 
-It is used by the
-[OHS Player Reference Client App](https://github.com/ohs-foundation/ohs-player-reference-client-app),
-which serves as a complete working example of everything described below.
+The library can be used by any project, new or existing. The
+[OHS Player Reference Client App](https://github.com/ohs-foundation/ohs-player-reference-client-app)
+is one such project: a complete client built with this library that serves as a working example of
+everything described below.
 
-## Features
+## Why use this library
 
-- **Configuration-driven extraction.** Declare *what* a screen shows as FHIRPath columns in a
-  `ViewDefinition`; the library evaluates them against FHIR search results and returns plain,
-  serializable Kotlin data classes.
-- **Registry-based rendering.** Screens ask for a *view-type*, not a concrete composable, so
-  renderers can be swapped or reconfigured without touching screen code.
-- **Multiplatform.** One source set targets Android, iOS, Desktop (JVM), and Web (JS and Wasm).
+Most healthcare apps spend a large share of their UI effort on the same problem: getting data out
+of FHIR and onto the screen. FHIR resources are deeply nested, almost every field is optional, and
+each screen ends up with its own hand-written mapping code, duplicated per platform and rewritten
+every time a card or form changes. This library moves that work into configuration:
+
+- **Starting a new healthcare app?** Skip the mapping layer entirely. Declare each screen's fields
+  as FHIRPath columns in a `ViewDefinition`, receive flat typed Kotlin classes back, and render
+  them with your own Compose renderers, on Android, iOS, desktop, and web from a single codebase.
+  You spend your first months on product, not on FHIR plumbing.
+- **Already have an app?** Adopt it one screen at a time. This is a library, not a framework: it
+  imposes no navigation, theming, or data layer, and renderers are ordinary composables you write.
+  Each adopted screen shrinks to configuration plus a small renderer, and because configuration
+  can be loaded from your backend through a `ConfigSource`, changing what a screen shows no longer
+  requires shipping an app release.
+- **Building on Open Health Stack?** This library is part of the OHS Player effort and sits on top
+  of the OHS Foundational Libraries, `fhir-model` for typed FHIR models and `fhir-path` for
+  FHIRPath evaluation, and pairs naturally with `fhir-data-capture` for questionnaires. If your
+  stack is [Open Health Stack](https://developers.google.com/open-health-stack/overview), this is
+  the display half of the same approach: standards-based configuration in, working UI out.
 
 ## Installation
 
