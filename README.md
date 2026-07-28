@@ -40,9 +40,6 @@ commonMain.dependencies {
 }
 ```
 
-> The library is not yet published to Maven Central. Until it is, clone this repository, run
-> `./gradlew publishToMavenLocal`, and add `mavenLocal()` to your repositories.
-
 ## Usage
 
 ### 1. Author configuration
