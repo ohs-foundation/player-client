@@ -1,4 +1,4 @@
-# OHS Player Reference Client Library
+# OHS Player Client
 
 A Kotlin Multiplatform library that renders healthcare UI from configuration instead of
 hand-written mapping code. FHIR resources are projected into typed view-state by declarative
@@ -36,7 +36,7 @@ every time a card or form changes. This library moves that work into configurati
 
 ```kotlin
 commonMain.dependencies {
-  implementation("dev.ohs.player:reference-library:1.0.0-alpha01")
+  implementation("dev.ohs.player:client:1.0.0-alpha01")
 }
 ```
 
@@ -156,8 +156,8 @@ The library ships `VerticalListRenderer` (the default), `HorizontalListRenderer`
 ## Development
 
 ```shell
-./gradlew :reference-library:jvmTest    # fast local iteration
-./gradlew :reference-library:allTests   # all targets
+./gradlew :client:jvmTest    # fast local iteration
+./gradlew :client:allTests   # all targets
 ./gradlew spotlessApply                 # format before committing
 ```
 

@@ -37,9 +37,9 @@ jobs:
         run: ./gradlew spotlessCheck
 
       # Known-broken targets (JS/Wasm browser tests, Android host tests) are
-      # disabled when CI=true — see reference-library/build.gradle.kts.
+      # disabled when CI=true — see client/build.gradle.kts.
       - name: Run tests
-        run: xvfb-run --auto-servernum ./gradlew :reference-library:allTests
+        run: xvfb-run --auto-servernum ./gradlew :client:allTests
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
@@ -47,5 +47,5 @@ jobs:
         with:
           name: test-reports
           path: |
-            reference-library/build/reports/tests/
-            reference-library/build/test-results/
+            client/build/reports/tests/
+            client/build/test-results/

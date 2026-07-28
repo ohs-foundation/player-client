@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-rootProject.name = "ohs-player-reference-client-library"
+rootProject.name = "player-client"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -48,4 +48,4 @@ dependencyResolutionManagement {
 
 plugins { id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0" }
 
-include(":reference-library")
+include(":client")
