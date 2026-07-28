@@ -21,8 +21,7 @@ import kotlinx.serialization.Serializable
  * Runtime model for a ViewJoinMap Binary — stitches one or more [ViewDefinition] projections, each
  * sourced from a different scope of a `SearchResult`, into one flat state row per pivot resource.
  *
- * Downloaded and interpreted at runtime by
- * [dev.ohs.player.client.extractor.GenericStateExtractor].
+ * Downloaded and interpreted at runtime by [dev.ohs.player.client.extractor.GenericStateExtractor].
  */
 @Serializable
 data class ViewJoinMap(

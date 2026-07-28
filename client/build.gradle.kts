@@ -110,8 +110,7 @@ mavenPublishing {
     scm {
       url = "https://github.com/ohs-foundation/player-client/"
       connection = "scm:git:git://github.com/ohs-foundation/player-client.git"
-      developerConnection =
-        "scm:git:ssh://git@github.com/ohs-foundation/player-client.git"
+      developerConnection = "scm:git:ssh://git@github.com/ohs-foundation/player-client.git"
     }
   }
 }
