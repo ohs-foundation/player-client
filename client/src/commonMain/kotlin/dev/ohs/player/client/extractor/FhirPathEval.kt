@@ -84,7 +84,7 @@ private fun FhirPathDate.toFhirString(): String = buildString {
 private fun FhirPathTime.toFhirString(): String = buildString {
   append(hour.pad2())
   append(':').append((minute ?: 0).pad2())
-  append(':').append((second ?: 0.0).toInt().pad2())
+  append(':').append((second?.intValue(exactRequired = false) ?: 0).pad2())
 }
 
 /** Renders a [FhirPathDateTime] as a FHIR `dateTime` string, preserving its precision. */
@@ -95,7 +95,7 @@ private fun FhirPathDateTime.toFhirString(): String = buildString {
   hour?.let { h ->
     append('T').append(h.pad2())
     append(':').append((minute ?: 0).pad2())
-    second?.let { append(':').append(it.toInt().pad2()) }
+    second?.let { append(':').append(it.intValue(exactRequired = false).pad2()) }
     utcOffset?.let { append(it.toString()) }
   }
 }

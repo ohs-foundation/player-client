@@ -18,6 +18,8 @@ package dev.ohs.player.client.extractor
 import dev.ohs.fhir.fhirpath.FhirPathEngine
 import dev.ohs.fhir.fhirpath.types.FhirPathDate
 import dev.ohs.fhir.fhirpath.types.FhirPathDateTime
+import dev.ohs.fhir.fhirpath.types.fromFhirR4Date
+import dev.ohs.fhir.fhirpath.types.fromFhirR4DateTime
 import dev.ohs.fhir.model.r4.FhirDate
 import dev.ohs.fhir.model.r4.FhirDateTime
 import dev.ohs.fhir.model.r4.Resource
