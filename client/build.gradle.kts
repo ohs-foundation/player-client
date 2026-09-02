@@ -54,9 +54,9 @@ kotlin {
   sourceSets {
     commonMain.dependencies {
       implementation(libs.kotlinx.serialization.json)
-      implementation(libs.ohs.fhir.model)
-      implementation(libs.ohs.fhir.path)
-      implementation(libs.ionspin.bignum)
+      api(libs.ohs.fhir.model.r4)
+      api(libs.ohs.fhir.path.r4)
+      api(libs.ionspin.bignum)
       implementation(libs.kermit)
       implementation(libs.kotlinx.datetime)
       implementation(libs.compose.runtime)

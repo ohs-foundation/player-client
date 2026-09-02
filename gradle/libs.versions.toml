@@ -13,7 +13,7 @@ ktfmt = "0.54"
 material3 = "1.10.0-alpha05"
 mavenPublish = "0.36.0"
 ohsFhirModel = "1.0.0-beta05"
-ohsFhirPath = "1.0.0-beta03"
+ohsFhirPath = "1.0.0-beta05"
 spotless = "8.6.0"
 
 [libraries]
@@ -28,8 +28,8 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-ohs-fhir-model = { module = "dev.ohs.fhir:fhir-model", version.ref = "ohsFhirModel" }
-ohs-fhir-path = { module = "dev.ohs.fhir:fhir-path", version.ref = "ohsFhirPath" }
+ohs-fhir-model-r4 = { module = "dev.ohs.fhir:fhir-model-r4", version.ref = "ohsFhirModel" }
+ohs-fhir-path-r4 = { module = "dev.ohs.fhir:fhir-path-r4", version.ref = "ohsFhirPath" }
 
 [plugins]
 androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
