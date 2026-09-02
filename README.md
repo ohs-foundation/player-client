@@ -36,7 +36,7 @@ every time a card or form changes. This library moves that work into configurati
 
 ```kotlin
 commonMain.dependencies {
-  implementation("dev.ohs.player:client:1.0.0-alpha01")
+  implementation("dev.ohs.player:client:1.0.0-alpha02")
 }
 ```
 
