@@ -20,6 +20,7 @@ import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import dev.ohs.fhir.fhirpath.FhirPathEngine
 import dev.ohs.fhir.fhirpath.types.FhirPathDate
 import dev.ohs.fhir.fhirpath.types.FhirPathDateTime
+import dev.ohs.fhir.fhirpath.types.FhirPathDecimal
 import dev.ohs.fhir.fhirpath.types.FhirPathTime
 import dev.ohs.fhir.model.r4.FhirDate
 import dev.ohs.fhir.model.r4.FhirDateTime
@@ -27,9 +28,9 @@ import dev.ohs.fhir.model.r4.FhirDateTime
 /**
  * Lightweight wrapper around a single FHIRPath evaluation result.
  *
- * The engine returns scalars as Kotlin types (`Boolean`, `String`, `BigDecimal`, …) and date/time
- * values as its own `FhirPathDate`/`FhirPathDateTime`/`FhirPathTime` types. These accessors
- * normalise both so callers read a value without casts.
+ * The engine returns scalars as Kotlin types (`Boolean`, `String`, …) and decimal and date/time
+ * values as its own `FhirPathDecimal`/`FhirPathDate`/`FhirPathDateTime`/`FhirPathTime` types. These
+ * accessors normalise both so callers read a value without casts.
  */
 class EvalResult(val raw: Any?) {
   val str: String?
@@ -52,7 +53,7 @@ class EvalResult(val raw: Any?) {
     get() = (raw as? Number)?.toLong()
 
   val decimal: BigDecimal?
-    get() = raw as? BigDecimal
+    get() = (raw as? FhirPathDecimal)?.asBigDecimal()
 
   val date: FhirDate?
     get() =

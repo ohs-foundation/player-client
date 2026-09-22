@@ -12,8 +12,8 @@ kotlinxSerializationJson = "1.11.0"
 ktfmt = "0.54"
 material3 = "1.10.0-alpha05"
 mavenPublish = "0.36.0"
-ohsFhirModel = "1.0.0-beta05"
-ohsFhirPath = "1.0.0-beta05"
+ohsFhirModel = "1.0.0-rc03"
+ohsFhirPath = "1.0.0-beta06"
 spotless = "8.6.0"
 
 [libraries]

@@ -15,9 +15,11 @@
  */
 package dev.ohs.player.client.extractor
 
+import com.ionspin.kotlin.bignum.decimal.BigDecimal
 import dev.ohs.fhir.fhirpath.FhirPathEngine
 import dev.ohs.fhir.fhirpath.types.FhirPathDate
 import dev.ohs.fhir.fhirpath.types.FhirPathDateTime
+import dev.ohs.fhir.fhirpath.types.FhirPathDecimal
 import dev.ohs.fhir.fhirpath.types.fromFhirR4Date
 import dev.ohs.fhir.fhirpath.types.fromFhirR4DateTime
 import dev.ohs.fhir.model.r4.FhirDate
@@ -370,11 +372,12 @@ class GenericStateExtractor(
 
     /**
      * Converts a constant's kotlin-fhir model value to the FHIRPath type the engine expects for a
-     * `%constant` variable. Date/time models must be the engine's own types to compare against
-     * extracted fields; numbers, booleans, and strings pass through unchanged.
+     * `%constant` variable. Decimal and date/time values must be the engine's own types to compare
+     * against extracted fields; integers, booleans, and strings pass through unchanged.
      */
     fun fhirPathValue(value: Any?): Any? =
       when (value) {
+        is BigDecimal -> FhirPathDecimal.fromBigDecimal(value)
         is FhirDate -> FhirPathDate.fromFhirR4Date(value)
         is FhirDateTime -> FhirPathDateTime.fromFhirR4DateTime(value)
         else -> value
